@@ -13,7 +13,7 @@
 # Google Map Platform 출시로 인해 ggmap패키지 변경됨
 
 # 구글 API키가 반드시 필요.
-googleAPIkey <-  "AIzaSyA2UeDNgg4KUaq5ANuZI-A_fU-2JnqcdOA"
+googleAPIkey <-  "찾아서 넣으세요^_^"
 
 #------------------------------------------------
 # 활용 데이터

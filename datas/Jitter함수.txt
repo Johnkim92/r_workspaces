@@ -1,0 +1,39 @@
+‘Jitter’ : 숫자에 노이즈 추가
+
+Description
+숫자 벡터에 소량의 노이즈를 추가.
+
+Usage
+jitter(x, factor = 1, amount = NULL)
+
+Arguments
+x 	: jitter가 추가되어야 하는 숫자 벡터..
+
+factor	: numeric.
+
+amount	: numeric; 양수이면 양 (아래 참조)으로, 그렇지 않으면 = 0이면 기본값 * z / 50.
+
+Default (NULL): factor * d / 5 여기서 d는 x 값 사이의 가장 작은 차이.
+
+Details 	: 결과 r은 r <- x + runif (n, -a, a). 
+	 여기서 n <- length (x)이고 a는 amount 인수 (지정된 경우)입니다..
+
+	 z <- max (x) - min (x) (보통 경우를 가정). 
+	 추가 할 금액 a는 다음과 같이 양의 인수 금액으로 제공되거나 z에서 계산된다.
+
+	 amount == 0이면 <- factor * z / 50 (S와 같음)을 설정.
+
+	 amount가 NULL (기본값) 인 경우, 
+            a <- factor * d / 5를 설정. 
+	 여기서 d는 인접한 (fuzz와 떨어져있는) x 값 사이의 가장 작은 차이.
+
+
+Value	: jitter(x, ...)는 x와 동일한 길이의 숫자를 반환하지만 연결을 끊으려면 노이즈가 추가.
+
+
+Examples
+round(jitter(c(rep(1, 3), rep(1.2, 4), rep(3, 3))), 3)
+## These two 'fail' with S-plus 3.x:
+
+jitter(rep(0, 7))
+jitter(rep(10000, 5))

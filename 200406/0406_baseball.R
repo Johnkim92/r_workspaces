@@ -1,13 +1,9 @@
-txt <- read.csv("../datas/2013년_프로야구선수_성적.csv")
+#####################################################################
+# 나이팅게일 차트로 표현.
+# 주요선수별성적-2013년.csv
 
-head(txt)
-class(baseball)
+data <- read.csv("../datas/주요선수별성적-2013년.csv")
+data
+row.names(data) <- data$선수명
 
-baseball <- txt[,c(2,19,20)]
-
-head(baseball)
-
-baseball$연봉대비출루율 <-  round(baseball$출루율/baseball$연봉*100,2)
-
-barplot(baseball$연봉대비출루율, names.arg=baseball$선수명, main="선수별 연봉대비 출루율", col=rainbow(length(baseball$연봉대비출루율)), xlab="선수명", ylab="연봉대비 출루율", ylim=c(0,100), cex.names=0.7, las=2)
-dev.new()
+data2 <- data[,c[7,8,11,12,13,14,17,19]]

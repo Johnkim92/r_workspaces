@@ -1,0 +1,44 @@
+---
+title: "0408_flexdashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: scroll # 열을 무시할 수 있다. -> 반응형 웹에서 자주 사용되는 것
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(ggplot2)
+# 계속 사용하는 라이브러리를 담아 놓는 청크
+```
+
+Column {data-width=650} <!-- 대소문자를 구분해야한다. -->
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+ggplot(data=mtcars, aes(x=hp, y=mpg, color=as.factor(cyl)))+
+  geom_point()
+
+```
+
+Column {data-width=350, .tabset .tabset-fade}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+ggplot(data=mtcars)+
+  geom_bar(mapping=aes(x=cyl, fill=as.factor(am)))
+
+```
+
+### Chart C
+
+```{r}
+ggplot(data=mtcars)+
+  geom_bar(mapping=aes(x=cyl, fill=as.factor(cyl)),position = "dodge")+
+  coord_polar() # 나이팅게일 차트를 시각화해주는 ggplot 툴
+```
+

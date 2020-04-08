@@ -1,0 +1,56 @@
+---
+title: "0408_flexdashboard2"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: scroll
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(dygraphs)
+library(plotly)
+library(highcharter)
+```
+
+### Lung Deaths (All)
+
+```{r}
+dygraph(ldeaths)
+
+```
+
+### Lung Deaths (Male)
+
+```{r}
+dygraph(mdeaths)
+
+```
+
+### Lung Deaths (Female)
+
+```{r}
+dygraph(fdeaths)
+
+```
+
+### using - plotly
+
+```{r}
+plot_ly(mtcars, x=~hp, y=~mpg, type='scatter', mode='markers',color=~as.factor(cyl))
+
+```
+
+### using-highcharter
+
+```{r}
+hchart(mtcars, "scatter", hcaes(x = hp, y= mpg, group = as.factor(cyl)))
+
+```
+
+### using-highcharter2
+
+```{r}
+hchart(diamonds$price, color = "#B71C1C", name="Price") %>% hc_title(text="You can zoom me")
+
+```

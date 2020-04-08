@@ -1,0 +1,149 @@
+---
+title: "0407_RMarkdown"
+author: "ksk"
+date: '2020 4 7 '
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+# 제목1
+
+## 제목2
+
+### 제목3
+
+#### 제목4
+
+헤더 처리 하지 않은 경우의 일반적인 폰트 사이즈
+
+##### 제목5
+
+###### 제목6
+
+제목7
+=====
+
+제목8
+-----
+
+일반 폰트
+
+*이텔릭체1*
+
+**볼드체1**
+
+_이텔릭체2_
+
+__볼드체2__
+
+* 이텔릭체3 *
+
+** 이텔릭체3 **
+
+일반 쓰기
+
+* 순서가 없는 글머리기호1 with *표
+
+* 순서가 없는 글머리기호2 with *표
+
+    + 순서 없는 글머리기호3 with +표 and 들여쓰기
+  
+    - 순서 없는 글머리기호4 with -표 and 들여쓰기
+  
+1. 순서 있는 글머리기호1
+
+2) 순서 있는 글머리기호2
+
+    A. 순서 있는 글머리기호3 and 들여쓰기
+  
+    B) 순서 있는 글머리기호4 and 들여쓰기
+  
+    C) 순서 있는 글머리기호5 and 들여쓰기
+  
+    현재 수준에서 공백 4개 후 입력하면 들여쓰기만 처리됨.
+    
+네이버 연결1 (https://www.naver.com)
+
+[네이버 연결2](https://www.naver.com)
+
+이미지 삽입
+
+![홈페이지에서 불러온 이미지](data:image/jpeg;base64,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)
+
+디스플레이 수식
+
+$$ y_{i} = \sqrt[3]{x_{i}} + \sum_{1}^{n} $$
+인라인 수식
+
+문장 안에서도 $y_{i} = \sqrt[3]{x_{i}} + \sum_{1}^{n}$ 와 같이 수식 입력 가능
+
+에디터에서 문장을 쓰다가 그냥 엔터키로 줄바꿈을 해도,
+실제 산출물에서는 줄이 바뀌지 않는다.
+
+줄바꿈을 하려면, 한 줄의 맨 마지막 공백을 2개 이상주고,   
+엔터키를 누르면 된다.
+
+***
+
+___
+
+구분 | 내용  
+- | -  
+이름 | ksk  
+나이 | 29  
+졸업연도 | 2012  
+입사연도 | 2020  
+부서명 | Background dev  
+소속본부 | HQ
+
+```{r test1}
+a=-5:5
+b=a^3
+c=data.frame(a,b)
+
+library(ggplot2)
+
+ggplot(data=c, aes(x=a, y=b))+geom_point()+geom_line(color="BLUE")
+
+```
+
+### mtcars 데이터셋의 요약
+
+mtcars 데이터셋의 행과 열의 수는 각각 `r dim(mtcars)`개이며, 이중 hp열의 평균은 `r round(mean(mtcars$hp), 2)` 이다.
+
+```{r results = "asis"}
+library(knitr)
+
+kable(head(iris, 10),
+      caption="knitr 패키지의 kable()함수를 이용한 표 그리기",
+      align=c("c","l","l","l","r"))
+```
+
+```{r}
+library(DT)
+
+datatable(iris, caption="DT 패키지를 활용한 표", filter="top")
+```
